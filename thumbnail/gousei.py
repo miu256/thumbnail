@@ -31,7 +31,7 @@ class gousei(object):
 
         heig,widt,_ = cv_image.shape
         limit = widt
-        x = int(widt*0.2)
+        x = int(widt*0.4)
         limit = limit-x
 
 
@@ -43,10 +43,12 @@ class gousei(object):
 
         draw = ImageDraw.Draw(pil_image)
 
+        '''
         if draw.textsize(text,font = font)[0] > limit:
             while draw.textsize(text + '...',font = font)[0] > limit:
                 text = text[:-1]
             text = text + '...'
+        '''
 
         draw.text(point, text, fill=color, font=font)
         cv_rgb_result_image = np.asarray(pil_image)
@@ -59,7 +61,7 @@ class gousei(object):
         if(limit == 0):
             heig,widt,_ = image.shape
             limit = widt
-            x = int(widt*0.1)
+            x = int(widt*0.4)
             limit = limit-x
 
         font = ImageFont.truetype(fontp, fonts)
@@ -70,7 +72,7 @@ class gousei(object):
 
         if draw.textsize(text,font = font)[0] < limit:
             if(flg == 0):
-                return int(draw.textsize(text,font = font)[0] )
+                return int(draw.textsize(text,font = font)[0] + widt*0.1)
             else:
                 return text
         else:
@@ -79,7 +81,7 @@ class gousei(object):
             text = text[:-1]
             text = text + '...'
             if(flg == 0):
-                return int(draw.textsize(text,font = font)[0])
+                return int(draw.textsize(text,font = font)[0] + widt*0.1)
             else:
                 return text
 

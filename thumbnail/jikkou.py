@@ -55,7 +55,7 @@ font_path5 = defont + 'KS-Kohichi-FeltPen.ttf'
 font_path6 = defont + 'ラノベPOP.otf'
 font_path7 = defont + 'keifont.ttf'
 font_path = font_path7
-defau = 47
+defau = 40
 face = 57
 if(position == 'defau'):
     font_size = defau
@@ -89,7 +89,7 @@ if(patern == 'right' or patern == 'left'):
         x = rig
     y = [int(height * 0.25),int(height*0.625)]
 else:
-    x = int(width*(1/14))
+    x = int(width*(1/8))
     y = [int(height*0.2),int(height*0.675)]
 
 
@@ -177,7 +177,7 @@ if(patern  == 'defau'):
 
     i=0
     while(i < len(text)):
-        image = gousei.puttext(image,text[i],((x+int(width*(1/20))),y[i]),font_path,font_size,color)
+        image = gousei.puttext(image,text[i],((x+int(width*(1/10))),y[i]),font_path,font_size,color)
         i+=1
 
 

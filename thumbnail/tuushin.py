@@ -13,7 +13,7 @@ def apitushin(user_ID):
 
     baseurl = "https://apiv2.twitcasting.tv"
     #code = アクセストークン入れてね〜〜〜〜
-    
+
 
     headers = {
         'X-Api-Version' : '2.0',
