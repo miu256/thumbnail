@@ -14,7 +14,7 @@ from make_better_face import make_better_face
 
 #user_ID = 'ユーザID入れてね'
 
-OpenCV_image,title,tag,profile,category,width,height = apitushin(user_ID)
+OpenCV_image,title,tag,profile,category = apitushin(user_ID)
 
 print('放送タイトル')
 print(title)
@@ -26,25 +26,24 @@ print('\n放送カテゴリ')
 print(category)
 
 
-OpenCV_image = make_better_face(OpenCV_image)
+height,width,_ = OpenCV_image.shape
 
-
-image = resize(OpenCV_image,0)
-textcolor = resize(OpenCV_image,1)
-print(textcolor)
-xp,yp,wp,hp = detect_face_xy(image)
-heigh,widt,_ = image.shape
-position = hantei(widt,xp,wp)
-comza = 0
-if(position == 'right'):
-    comza = int(xp)
-elif(position == 'left'):
-    comza =  int(xp+wp)
-print(widt)
-print(comza)
-print(position)
-plt.imshow(image)
-
+if(category == None or ('face' in category) != True):
+    image = OpenCV_image
+    position = 'defau'
+else:
+    OpenCV_image = make_better_face(OpenCV_image)
+    image = resize(OpenCV_image,0)
+    textcolor = resize(OpenCV_image,1)
+    xp,yp,wp,hp = detect_face_xy(image)
+    height,width,_ = image.shape
+    position = hantei(width,xp,wp)
+    comza = 0
+    if(position == 'right'):
+        comza = int(xp)
+    elif(position == 'left'):
+        comza =  int(xp+wp)
+    plt.imshow(image)
 
 defont = './font/'
 
@@ -58,7 +57,10 @@ font_path7 = defont + 'keifont.ttf'
 font_path = font_path7
 defau = 47
 face = 57
-font_size = face
+if(position == 'defau'):
+    font_size = defau
+else:
+    font_size = face
 
 fil = './comm/'
 com1 = "shikou.png"
@@ -76,20 +78,20 @@ com = Image.open(fil + com6)
 
 color = (0,0,0)
 
-defa = 'defau'
 patern = position
 
-lef = int(width*(1/14))
-rig = comza + int(width*(1/14))
-if(patern == 'right' or patern == 'defau'):
-    x = lef
-elif(patern == 'left'):
-    x = rig
-
-if(patern == 'defau'):
-    y = [int(height*0.2),int(height*0.675)]
-else:
+if(patern == 'right' or patern == 'left'):
+    lef = int(width*(1/14))
+    rig = comza + int(width*(1/14))
+    if(patern == 'right'):
+        x = lef
+    elif(patern == 'left'):
+        x = rig
     y = [int(height * 0.25),int(height*0.625)]
+else:
+    x = int(width*(1/14))
+    y = [int(height*0.2),int(height*0.675)]
+
 
 count,i,tflg,pflg,cflg = 0,0,0,0,0
 tagle = len(tag)
@@ -125,12 +127,15 @@ if(category != None and cflg == 0 and len(text) < 2):
     cflg =1
 
 
-if(patern == 'left'):
-    limit = -(comza-widt)
-    limit = limit -int(width*(1/10))
-elif(patern == 'right'):
-    limit = comza
-    limit = limit -int(width*(1/10))
+if(patern == 'left' or patern == 'right'):
+    if(patern == 'left'):
+        limit = -(comza-width)
+        limit = limit -int(width*(1/10))
+    elif(patern == 'right'):
+        limit = comza
+        limit = limit -int(width*(1/10))
+else:
+    limit = 0
 
 
 comsiz = []
@@ -145,16 +150,17 @@ if(len(text)>1):
 
 print(text)
 
-if(len(text)>0):
-    image = drawing_word(image, textcolor,text[0],(x,y[0]),font_size)
-if(len(text)>1):
-    image = drawing_word(image, textcolor,text[1],(x,y[1]),font_size)
+if(patern == 'left' or patern == 'right'):
+    if(len(text)>0):
+        image = drawing_word(image, textcolor,text[0],(x,y[0]),font_size)
+    if(len(text)>1):
+        image = drawing_word(image, textcolor,text[1],(x,y[1]),font_size)
 
 
 
 if(patern  == 'defau'):
-    #for i in range(len(comsiz)):
-    #   comsiz[i] = int(comsiz[i])+50
+    for i in range(len(comsiz)):
+       comsiz[i] = int(comsiz[i])+50
 
 
     wid = []
@@ -171,7 +177,7 @@ if(patern  == 'defau'):
 
     i=0
     while(i < len(text)):
-        image = gousei.puttext(image,text[i],(x,y[i]),font_path,font_size,color)
+        image = gousei.puttext(image,text[i],((x+int(width*(1/20))),y[i]),font_path,font_size,color)
         i+=1
 
 

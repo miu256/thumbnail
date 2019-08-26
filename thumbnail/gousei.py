@@ -94,7 +94,7 @@ class gousei(object):
             point,
     ):
 
-        overlay_height, overlay_width = OpenCV_image.shape[:2]
+        overlay_height, overlay_width = cv_overlay_image.shape[:2]
 
         # OpenCV形式の画像をPIL形式に変換(α値含む)
         # 背景画像

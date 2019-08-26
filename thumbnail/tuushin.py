@@ -13,6 +13,7 @@ def apitushin(user_ID):
 
     baseurl = "https://apiv2.twitcasting.tv"
     #code = アクセストークン入れてね〜〜〜〜
+    
 
     headers = {
         'X-Api-Version' : '2.0',
@@ -41,6 +42,4 @@ def apitushin(user_ID):
     ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
     cv.imwrite('create.png' , ima)
 
-    width,height = immmg.size
-
-    return OpenCV_image,title,tag,profile,category,width,height
+    return OpenCV_image,title,tag,profile,category
