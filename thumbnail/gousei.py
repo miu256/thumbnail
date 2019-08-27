@@ -28,27 +28,12 @@ class gousei(object):
     @classmethod
     def puttext(cls, cv_image, text, point, font_path, font_size, color=(0,0,0)):
 
-
-        heig,widt,_ = cv_image.shape
-        limit = widt
-        x = int(widt*0.4)
-        limit = limit-x
-
-
-
         font = ImageFont.truetype(font_path, font_size)
 
         cv_rgb_image = cv.cvtColor(cv_image, cv.COLOR_BGR2RGB)
         pil_image = Image.fromarray(cv_rgb_image)
 
         draw = ImageDraw.Draw(pil_image)
-
-        '''
-        if draw.textsize(text,font = font)[0] > limit:
-            while draw.textsize(text + '...',font = font)[0] > limit:
-                text = text[:-1]
-            text = text + '...'
-        '''
 
         draw.text(point, text, fill=color, font=font)
         cv_rgb_result_image = np.asarray(pil_image)
@@ -62,7 +47,7 @@ class gousei(object):
         heig,widt,_ = image.shape
         if(limit == 0):
             limit = widt
-            x = int(widt*0.4)
+            x = int(widt*0.2)
             limit = limit-x
 
         font = ImageFont.truetype(fontp, fonts)
@@ -71,20 +56,24 @@ class gousei(object):
         draw = ImageDraw.Draw(pil_image)
 
 
-        if draw.textsize(text,font = font)[0] < limit:
+
+        if (int(draw.textsize(text,font = font)[0]) < limit):
             if(flg == 0):
                 return int(draw.textsize(text,font = font)[0] + widt*0.1)
             else:
-                return text
+                return text,fonts
         else:
-            while(draw.textsize(text,font = font)[0] > limit):
+            fonts = int(widt*(1/14))
+            font = ImageFont.truetype(fontp, fonts)
+            if(int(draw.textsize(text,font = font)[0]) > limit):
+                while(int(draw.textsize(text,font = font)[0]) > limit):
+                    text = text[:-1]
                 text = text[:-1]
-            text = text[:-1]
-            text = text + '...'
+                text = text + '...'
             if(flg == 0):
-                return int(draw.textsize(text,font = font)[0] + widt*0.1)
+                return int(int(draw.textsize(text,font = font)[0]) + widt*0.2)
             else:
-                return text
+                return text,fonts
 
 
 

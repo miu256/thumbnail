@@ -76,6 +76,7 @@ def detect_face(img):
 def detect_face_xy(img):
     # xml の中身は諸説あります
     cascade = 'haarcascade/'
+    marker = 0
     try:
         face_cascade = cv.CascadeClassifier(cascade + "haarcascade_frontalface_alt.xml")
         face_img = img.copy()

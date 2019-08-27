@@ -35,8 +35,8 @@ def comset(OpenCV_image,title,tag,profile,category):
     patern = position
 
     if(patern == 'right' or patern == 'left'):
-        lef = int(width*(1/8))
-        rig = comza + int(width*(1/14))
+        lef = int(width*(1/15))
+        rig = comza + int(width*(1/15))
         if(patern == 'right'):
             x = lef
         elif(patern == 'left'):
@@ -84,31 +84,32 @@ def comset(OpenCV_image,title,tag,profile,category):
     if(patern == 'left' or patern == 'right'):
         if(patern == 'left'):
             limit = -(comza-width)
-            limit = limit -int(width*(1/7.5))
+            limit = limit -int(width*(1/12))
         elif(patern == 'right'):
             limit = comza
-            limit = limit -int(width*(1/7.5))
+            limit = limit -int(width*(1/12))
     else:
         limit = 0
 
 
     comsiz = []
 
+    fonts = [0,0]
 
     if(len(text)>0):
         comsiz.append(gousei.comsize(image,text[0],font_path,font_size,limit,0))
-        text[0] = gousei.comsize(image,text[0],font_path,font_size,limit,1)
+        text[0],fonts[0] = gousei.comsize(image,text[0],font_path,font_size,limit,1)
     if(len(text)>1):
         comsiz.append(gousei.comsize(image,text[1],font_path,font_size,limit,0))
-        text[1] = gousei.comsize(image,text[1],font_path,font_size,limit,1)
+        text[1],fonts[1] = gousei.comsize(image,text[1],font_path,font_size,limit,1)
 
     print(text)
 
     if(patern == 'left' or patern == 'right'):
         if(len(text)>0):
-            image = drawing_word(image, textcolor,text[0],(x,y[0]),font_size,edgecolor,font_path)
+            image = drawing_word(image, textcolor,text[0],(x,y[0]),fonts[0],edgecolor,font_path)
         if(len(text)>1):
-            image = drawing_word(image, textcolor,text[1],(x,y[1]),font_size,edgecolor,font_path)
+            image = drawing_word(image, textcolor,text[1],(x,y[1]),fonts[1],edgecolor,font_path)
 
 
 
@@ -118,6 +119,8 @@ def comset(OpenCV_image,title,tag,profile,category):
 
 
         wid = []
+
+        print(comsiz)
 
         for i in range(len(comsiz)):
             comm = com.resize((comsiz[i],int(height*(1/2.5))))

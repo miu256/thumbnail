@@ -9,11 +9,9 @@ from io import BytesIO
 import matplotlib.pyplot as plt
 
 
-def apitushin(user_ID):
+def apitushin(user_ID,code):
 
     baseurl = "https://apiv2.twitcasting.tv"
-    #code = アクセストークン入れてね〜〜〜〜
-    
 
 
     headers = {
@@ -29,18 +27,23 @@ def apitushin(user_ID):
         return str(baseurl + "/users/" + user_ID + "/live/thumbnail?size=large&position=beginning")
 
 #ユーザIDから情報を取得する
-    userlive = requests.get(url = getuserlive(user_ID),headers = headers).json()
-    title = userlive['movie']['title']
-    category = userlive['movie']['category']
-    profile = userlive['broadcaster']['profile']
-    tag = userlive['tags']
+    try:
+        userlive = requests.get(url = getuserlive(user_ID),headers = headers).json()
+        title = userlive['movie']['title']
+        category = userlive['movie']['category']
+        profile = userlive['broadcaster']['profile']
+        tag = userlive['tags']
 
-    rimage = requests.get(url = getrealtime(user_ID),headers=headers)
-    rrimage = rimage.content
-    immmg = Image.open(BytesIO(rrimage))
-    OpenCV_image= np.asarray(immmg)
-    plt.imshow(OpenCV_image)
-    ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
-    cv.imwrite('create.png' , ima)
+        rimage = requests.get(url = getrealtime(user_ID),headers=headers)
+        rrimage = rimage.content
+        immmg = Image.open(BytesIO(rrimage))
+        OpenCV_image= np.asarray(immmg)
+        plt.imshow(OpenCV_image)
+        ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
+        cv.imwrite('create.png' , ima)
 
-    return OpenCV_image,title,tag,profile,category
+        return OpenCV_image,title,tag,profile,category
+
+
+    except:
+        return None

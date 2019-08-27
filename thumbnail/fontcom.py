@@ -13,7 +13,7 @@ def fontcom(position,width):
     font_path6 = defont + 'ラノベPOP.otf'
     font_path7 = defont + 'keifont.ttf'
     font_path = font_path7
-    font_size = int(width * (1/11))
+    font_size = int(width * (1/8))
 
     fil = './comm/'
     com1 = "shikou.png"
