@@ -17,6 +17,8 @@ def comset(OpenCV_image,title,tag,profile,category):
     else:
         OpenCV_image = make_better_face(OpenCV_image)
         image,textcolor,edgecolor = resize(OpenCV_image)
+        if(textcolor == None and edgecolor == None):
+            return OpenCV_image
         xp,yp,wp,hp = detect_face_xy(image)
         height,width,_ = image.shape
         position = hantei(width,xp,wp)
@@ -33,7 +35,7 @@ def comset(OpenCV_image,title,tag,profile,category):
     patern = position
 
     if(patern == 'right' or patern == 'left'):
-        lef = int(width*(1/8.5))
+        lef = int(width*(1/8))
         rig = comza + int(width*(1/14))
         if(patern == 'right'):
             x = lef
