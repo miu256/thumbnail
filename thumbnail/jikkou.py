@@ -23,5 +23,17 @@ print(category)
 
 image = comset(OpenCV_image,title,tag,profile,category)
 
-ima = cv.cvtColor(image, cv.COLOR_RGB2BGR)
+## masking for ios
+height,width = OpenCV_image.shape[:-1]
+yokomask = np.full((height, int(height/6) , 3), (0,0,0), dtype=np.uint8)
+tatemask = np.full((int(height/6), width+int(height/6)*2 , 3), (0,0,0), dtype=np.uint8)
+#tate
+tmpImg1 = cv.hconcat([yokomask, OpenCV_image])
+tmpImg2 = cv.hconcat([tmpImg1, yokomask])
+#yoko
+tmpImg3 = cv.vconcat([tatemask, tmpImg2])
+iosImg = cv.vconcat([tmpImg3, tatemask])
+
+
+ima = cv.cvtColor(iosImg, cv.COLOR_RGB2BGR)
 cv.imwrite('after_last.png' , ima)
