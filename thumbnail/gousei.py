@@ -58,8 +58,9 @@ class gousei(object):
 
 
     def comsize(image,text,fontp,fonts,limit,flg):
+
+        heig,widt,_ = image.shape
         if(limit == 0):
-            heig,widt,_ = image.shape
             limit = widt
             x = int(widt*0.4)
             limit = limit-x

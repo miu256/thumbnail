@@ -3,21 +3,32 @@ import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 
 
-def drawing_word(img, color,text,point,fontsize):
+def drawing_word(img, color,text,point,fontsize,edgecolor,fontpath):
+    edge_color = (0,0,0)
+    edge_color = (int(edgecolor[0]),int(edgecolor[1]),int(edgecolor[2]))
+
+    flg=0
+    for i in range(3):
+        if(edgecolor[0] < 100):
+            flg += 1
+
+    if(flg == 2):
+        edge_color = (0,0,0)
+
     img = Image.fromarray(img)
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("./font/keifont.ttf", fontsize)
+    font = ImageFont.truetype(fontpath, fontsize)
 
     textX,textY = point
     #text = "Are we centered yet?"
     w, h = draw.textsize(text, font)
 
-    bw = 1
+    bw = 2
 
-    draw.text((textX-bw, textY-bw), text,(0,0,0),font=font)
-    draw.text((textX+bw, textY-bw), text,(0,0,0),font=font)
-    draw.text((textX+bw, textY+bw), text,(0,0,0),font=font)
-    draw.text((textX-bw, textY+bw), text,(0,0,0),font=font)
+    draw.text((textX-bw, textY-bw), text,edge_color,font=font)
+    draw.text((textX+bw, textY-bw), text,edge_color,font=font)
+    draw.text((textX+bw, textY+bw), text,edge_color,font=font)
+    draw.text((textX-bw, textY+bw), text,edge_color,font=font)
     draw.text((textX, textY), text, color, font=font)
 
     img = np.asarray(img)
@@ -81,7 +92,7 @@ def detect_face_xy(img):
     return xpoint,ypoint,wpoint,hpoint
 
 
-def resize(img,flg):
+def resize(img):
     x,y,w,h = detect_face_xy(img)
     height, width, channels = img.shape[:3]
 
@@ -111,10 +122,8 @@ def resize(img,flg):
         word_color = generate_word_rightside(maskedImg, maskcolor, right_edge)
         #img = drawing_word(maskedImg, word_color)
 
-    if(flg == 0):
-        return maskedImg
-    else:
-        return word_color
+
+    return maskedImg,word_color,maskcolor
 
 
 def calculate_ComplementaryColor(color):
@@ -145,4 +154,4 @@ def generate_word_rightside(img, maskcolor,right_edge):
 def generate_word_leftside(img, maskcolor,right_edge):
     wordcolor = calculate_ComplementaryColor(maskcolor)
 #    cv2.putText(img, 'moi!', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1.0, wordcolor, thickness=2)
-    return word_color
+    return wordcolor
