@@ -72,55 +72,59 @@ def detect_face(img):
     return face_img
 
 
-def detect_face_xy(img):
+def detect_face_xy(img):   
     # xml の中身は諸説あります
-    face_cascade = cv.CascadeClassifier("haarcascade/haarcascade_frontalface_alt.xml")
-
-    face_img = img.copy()
-    face_rects = face_cascade.detectMultiScale(face_img, scaleFactor = 1.01, minNeighbors = 3)
-
-    face_area = []
-
-    # face_rects　には顔認識した複数座標が入っている
-    for (xpoint,ypoint,wpoint,hpoint) in face_rects:
-        cv.rectangle(face_img, (xpoint,ypoint), (xpoint+wpoint,ypoint+hpoint), (255,245,0), 2)
-        face_area.append([wpoint*hpoint, xpoint, ypoint, wpoint, hpoint])
-
-    face_area.sort()
-    xpoint,ypoint,wpoint,hpoint = face_area[-1][1:]
-
-    return xpoint,ypoint,wpoint,hpoint
+    marker = 0
+    try:
+        face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_alt.xml")
+        face_img = img.copy()
+        face_rects = face_cascade.detectMultiScale(face_img, scaleFactor = 1.01, minNeighbors = 3) 
+        face_area = []
+        # face_rects　には顔認識した複数座標が入っている
+        for (xpoint,ypoint,wpoint,hpoint) in face_rects: 
+            cv2.rectangle(face_img, (xpoint,ypoint), (xpoint+wpoint,ypoint+hpoint), (255,245,0), 2) 
+            face_area.append([wpoint*hpoint, xpoint, ypoint, wpoint, hpoint])
+        face_area.sort()
+        xpoint,ypoint,wpoint,hpoint = face_area[-1][1:]
+        marker = 0
+        return marker,xpoint,ypoint,wpoint,hpoint
+    
+    except:
+        return marker
 
 
 def resize(img):
-    x,y,w,h = detect_face_xy(img)
-    height, width, channels = img.shape[:3]
-
-    margin = 15
-    right_edge = min(x + w + margin, width)
-    left_edge = max(0, x - margin)
-
-    if x > (width - (x+w)):
-        margin = min(margin, width-right_edge)
-        cutImg = img[:, 0: right_edge]
-        backcolorImg = img[:,0: left_edge]
-        maskcolor = Get_backImg(backcolorImg)
-
-        mask = np.full((height, width - right_edge, 3), maskcolor, dtype=np.uint8)
-        maskedImg = cv.hconcat([mask, cutImg])
-        word_color = generate_word_leftside(maskedImg, maskcolor, right_edge)
-        #img = drawing_word(maskedImg, word_color)
-
+    if type(detect_face_xy(img))==int:
+        return img
+    
     else:
-        margin = min(margin, left_edge)
-        cutImg = img[:, left_edge: width]
-        backcolorImg = img[:,right_edge: width]
-        maskcolor = Get_backImg(backcolorImg)
-
-        mask = np.full((height, left_edge, 3), maskcolor, dtype=np.uint8)
-        maskedImg = cv.hconcat([cutImg, mask])
-        word_color = generate_word_rightside(maskedImg, maskcolor, right_edge)
-        #img = drawing_word(maskedImg, word_color)
+        x,y,w,h = detect_face_xy(img)[1:]
+        height, width, channels = OpenCV_image.shape[:3]
+        margin = 15
+        right_edge = min(x + w + margin, width)
+        left_edge = max(0, x - margin)
+        
+        if x > (width - (x+w)):
+            margin = min(margin, width-right_edge)
+            cutImg = img[:, 0: right_edge]
+            backcolorImg = img[:,0: left_edge]
+            maskcolor = Get_backImg(backcolorImg)
+            
+            mask = np.full((height, width - right_edge, 3), maskcolor, dtype=np.uint8)
+            maskedImg = cv2.hconcat([mask, cutImg])
+            word_color = generate_word_leftside(maskedImg, maskcolor, right_edge)
+            #img = drawing_word(maskedImg, word_color)
+    
+        else:
+            margin = min(margin, left_edge)
+            cutImg = img[:, left_edge: width]
+            backcolorImg = img[:,right_edge: width]
+            maskcolor = Get_backImg(backcolorImg)
+            
+            mask = np.full((height, left_edge, 3), maskcolor, dtype=np.uint8)
+            maskedImg = cv2.hconcat([cutImg, mask])
+            word_color = generate_word_rightside(maskedImg, maskcolor, right_edge)
+            #img = drawing_word(maskedImg, word_color)
 
 
     return maskedImg,word_color,maskcolor
