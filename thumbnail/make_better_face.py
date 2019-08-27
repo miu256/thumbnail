@@ -15,18 +15,20 @@ def make_better_face(face):
     """
     画像の人間の目を大きくして、フィルターかける
     """
-    bigeye_face_cv = eye_bigger(face)
-    bigeye_face_ski = cv2.cvtColor(bigeye_face_cv, cv2.COLOR_BGR2RGB)
+    try:
+        bigeye_face_cv = eye_bigger(face)
+        bigeye_face_ski = cv2.cvtColor(bigeye_face_cv, cv2.COLOR_BGR2RGB)
 
-    better_face_ski = img_as_ubyte(filter_nice(img_as_float(bigeye_face_ski)))
-    better_face_cv = cv2.cvtColor(better_face_ski, cv2.COLOR_RGB2BGR)
+        better_face_ski = img_as_ubyte(filter_nice(img_as_float(bigeye_face_ski)))
+        better_face_cv = cv2.cvtColor(better_face_ski, cv2.COLOR_RGB2BGR)
 
-    return better_face_cv
-
+        return better_face_cv
+    except:
+        return None
 
 if __name__ == '__main__':
     DIR = os.path.abspath(os.path.dirname('__file__'))
-    face = cv2.imread(DIR + '/data/' + 'test.jpg')
+    face = cv2.imread(DIR + '/images/' + 'test.jpg')
     face = make_better_face(face)
-    cv2.imwrite(DIR + '/data/' + 'output.jpg', face)
+    cv2.imwrite(DIR + '/images/' + 'output.jpg', face)
   
