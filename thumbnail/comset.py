@@ -43,7 +43,7 @@ def comset(OpenCV_image,title,tag,profile,category):
             x = rig
         y = [int(height * 0.25),int(height*0.625)]
     else:
-        x = int(width*(1/8))
+        x = int(width*(1/20))
         y = [int(height*0.2),int(height*0.675)]
 
 
@@ -97,13 +97,14 @@ def comset(OpenCV_image,title,tag,profile,category):
     fonts = [0,0]
 
     if(len(text)>0):
-        comsiz.append(gousei.comsize(image,text[0],font_path,font_size,limit,0))
-        text[0],fonts[0] = gousei.comsize(image,text[0],font_path,font_size,limit,1)
+        comsiz.append(gousei.comsize(image,text[0],font_path,font_size,limit,0,width))
+        text[0],fonts[0] = gousei.comsize(image,text[0],font_path,font_size,limit,1,width)
     if(len(text)>1):
-        comsiz.append(gousei.comsize(image,text[1],font_path,font_size,limit,0))
-        text[1],fonts[1] = gousei.comsize(image,text[1],font_path,font_size,limit,1)
+        comsiz.append(gousei.comsize(image,text[1],font_path,font_size,limit,0,width))
+        text[1],fonts[1] = gousei.comsize(image,text[1],font_path,font_size,limit,1,width)
 
     print(text)
+
 
     if(patern == 'left' or patern == 'right'):
         if(len(text)>0):
@@ -115,12 +116,12 @@ def comset(OpenCV_image,title,tag,profile,category):
 
     if(patern  == 'defau'):
         for i in range(len(comsiz)):
-           comsiz[i] = int(comsiz[i])+50
+           comsiz[i] = int(comsiz[i])+int(comsiz[i]*(1/15))
 
 
         wid = []
 
-        print(comsiz)
+        #print(comsiz)
 
         for i in range(len(comsiz)):
             comm = com.resize((comsiz[i],int(height*(1/2.5))))
@@ -133,7 +134,7 @@ def comset(OpenCV_image,title,tag,profile,category):
 
         i=0
         while(i < len(text)):
-            image = gousei.puttext(image,text[i],((x+int(width*(1/10))),y[i]),font_path,font_size,color)
+            image = gousei.puttext(image,text[i],((x+int(width*(1/12))),y[i]),font_path,fonts[i],color)
             i+=1
 
 

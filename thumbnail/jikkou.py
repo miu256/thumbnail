@@ -7,8 +7,8 @@ from comset import comset
 from tuushin import apitushin
 from movie import  movie
 
-code = 'アクセストークン入れてね'
-user_ID = 'ユーザID入れてね'
+#code = 'アクセストークン'
+#user_ID = ''
 
 def jikkou(user_ID):
     ext=0
@@ -33,14 +33,21 @@ def jikkou(user_ID):
         print('\n放送カテゴリ')
         print(category)
 
-        ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
-        cv.imwrite('Before.png' , ima)
-
-
         image = comset(OpenCV_image,title,tag,profile,category)
 
-        ima = cv.cvtColor(image, cv.COLOR_RGB2BGR)
-    cv.imwrite('after_last.png' , ima)
+        height,width = image.shape[:-1]
+        yokomask = np.full((height, int(height/6) , 3), (0,0,0), dtype=np.uint8)
+        tatemask = np.full((int(height/6), width+int(height/6)*2 , 3), (0,0,0), dtype=np.uint8)
+        #tate
+        tmpImg1 = cv.hconcat([yokomask, image])
+        tmpImg2 = cv.hconcat([tmpImg1, yokomask])
+        #yoko
+        tmpImg3 = cv.vconcat([tatemask, tmpImg2])
+        iosImg = cv.vconcat([tmpImg3, tatemask])
+
+
+        ima = cv.cvtColor(iosImg, cv.COLOR_RGB2BGR)
+        cv.imwrite('after_last.png' , ima)
 
 if __name__ == '__main__':
     jikkou(user_ID)

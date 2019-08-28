@@ -42,12 +42,11 @@ class gousei(object):
         return cv_bgr_result_image
 
 
-    def comsize(image,text,fontp,fonts,limit,flg):
+    def comsize(image,text,fontp,fonts,limit,flg,widt):
 
-        heig,widt,_ = image.shape
         if(limit == 0):
             limit = widt
-            x = int(widt*0.2)
+            x = int(widt*0.25)
             limit = limit-x
 
         font = ImageFont.truetype(fontp, fonts)
@@ -55,11 +54,9 @@ class gousei(object):
         pil_image = Image.fromarray(cv_rgb_image)
         draw = ImageDraw.Draw(pil_image)
 
-
-
         if (int(draw.textsize(text,font = font)[0]) < limit):
             if(flg == 0):
-                return int(draw.textsize(text,font = font)[0] + widt*0.1)
+                return int(draw.textsize(text,font = font)[0] + widt*0.15)
             else:
                 return text,fonts
         else:
@@ -71,7 +68,7 @@ class gousei(object):
                 text = text[:-1]
                 text = text + '...'
             if(flg == 0):
-                return int(int(draw.textsize(text,font = font)[0]) + widt*0.2)
+                return int(int(draw.textsize(text,font = font)[0]) + widt*0.15)
             else:
                 return text,fonts
 
@@ -114,7 +111,7 @@ class gousei(object):
     def spr(tst):
         box = []
         last = ''
-        k = re.compile('[亜-黑ぁ-んァ-ヶ一二三四五六七八九十壱弐参拾百千万萬億兆〇]+')
+        k = re.compile('[亜-黑ぁ-んァ-ヶ一二三四五六七八九十壱弐参拾百千万萬億兆〇不]+')
         for i in range(len(tst)):
             if(None != k.fullmatch(tst[i]) and len(box) < 20):
                 box.append(tst[i])
