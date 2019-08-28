@@ -35,9 +35,6 @@ def apitushin(user_ID,code):
         rrimage = rimage.content
         immmg = Image.open(BytesIO(rrimage))
         OpenCV_image= np.asarray(immmg)
-        plt.imshow(OpenCV_image)
-        ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
-        cv.imwrite('create.png' , ima)
 
         return OpenCV_image,title,tag,profile,category
 

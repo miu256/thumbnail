@@ -7,8 +7,14 @@ from comset import comset
 from tuushin import apitushin
 from movie import  movie
 
-#code = 'アクセストークン'
+#code = 'トークン'
 #user_ID = ''
+
+sample = './sample/'
+
+test = 1
+stag = ['顔出し','初見さん大歓迎']
+scate = 'face'
 
 def jikkou(user_ID):
     ext=0
@@ -32,6 +38,18 @@ def jikkou(user_ID):
         print(profile)
         print('\n放送カテゴリ')
         print(category)
+
+        if(test == 1):
+            OpenCV_image = Image.open(sample + 'sample3.jpg')
+            OpenCV_image = np.asarray(OpenCV_image)
+            title = ''
+            profile = ''
+            tag = stag
+            category = scate
+
+
+        ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
+        cv.imwrite('create.png' , ima)
 
         image = comset(OpenCV_image,title,tag,profile,category)
 
