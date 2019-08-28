@@ -35,7 +35,7 @@ def detect_eyes(img):
     eyes = EYE_CASCADE.detectMultiScale(face_img)
 
     # 検出できなかったらそのまま返す
-    if not eyes.any():
+    if len(eyes) == 0:
         return [], []
 
     # 一人分の目だけを対象にする
@@ -74,6 +74,6 @@ def attach_eye(img_opencv, eyes, eye1, eye2):
 
 if __name__ == '__main__':
     DIR = os.path.abspath(os.path.dirname('__file__'))
-    face = cv2.imread(DIR + '/data/' + 'test.png')
+    face = cv2.imread(DIR + '/images/' + 'test.jpg')
     face = eye_bigger(face)
-    cv2.imwrite(DIR + '/data/' + 'output.png', face)
+    cv2.imwrite(DIR + '/images/' + 'output.jpg', face)
