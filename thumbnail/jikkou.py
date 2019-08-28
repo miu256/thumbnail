@@ -7,16 +7,11 @@ from comset import comset
 from tuushin import apitushin
 from movie import  movie
 
-#code = 'トークン'
-#user_ID = ''
+code = 'Y3Nhc2FrdXJlX2l0YWk0LjcyOGNkYWM0NDU3MWQwYWQ2MTkxMDkxMTliNTA1OGFiMDI2YzQxNzkzZTdhMTgxMGM4NjRhOTA5NGFhZDQ1Mjk6OTFmOTY2MDBhMDI5ODlhMTFlNDA3Mzk2ZjBkZmRkZGM1MDhhNDg2MzQ5M2EzOGU2ZjYxZjRkMDg1NjQ1NWZhOA=='
 
 sample = './sample/'
 
-test = 1
-stag = ['顔出し','初見さん大歓迎']
-scate = 'face'
-
-def jikkou(user_ID):
+def jikkou(user_ID, test, stag, scate):
     ext=0
 
     if(apitushin(user_ID,code) == None):
@@ -49,7 +44,7 @@ def jikkou(user_ID):
 
 
         ima = cv.cvtColor(OpenCV_image, cv.COLOR_RGB2BGR)
-        cv.imwrite('create.png' , ima)
+        cv.imwrite('./output/' + user_ID + '_' + scate + '_' +'create.png' , ima)
 
         image = comset(OpenCV_image,title,tag,profile,category)
 
@@ -65,7 +60,12 @@ def jikkou(user_ID):
 
 
         ima = cv.cvtColor(iosImg, cv.COLOR_RGB2BGR)
-        cv.imwrite('after_last.png' , ima)
+        cv.imwrite('./output/' + user_ID + '_' + scate + '_' + 'after_last.png' , ima)
 
 if __name__ == '__main__':
-    jikkou(user_ID)
+    user_ID = ''
+    test = 1
+    stag = ['顔出し', '初見さん大歓迎']
+    scate = 'face'
+
+    jikkou(user_ID, test, stag, scate)

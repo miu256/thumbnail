@@ -96,7 +96,7 @@ def detect_face_xy(img):
 
 def resize(img):
     if (detect_face_xy(img) == None):
-        print('らー')
+        #print('らー')
         return img,None,None
 
     else:

@@ -7,11 +7,11 @@ from ueda import drawing_word,detect_face_xy,resize
 from gousei import gousei,hantei
 from make_better_face import make_better_face
 
-def comset(OpenCV_image,title,tag,profile,category):
+def comset(OpenCV_image,title,tag,profile,category, scate):
 
     height,width,_ = OpenCV_image.shape
 
-    if(category == None or ('face' in category) != True):
+    if(scate != 'face'):
         image = OpenCV_image
         position = 'defau'
     else:
@@ -19,7 +19,12 @@ def comset(OpenCV_image,title,tag,profile,category):
         image,textcolor,edgecolor = resize(OpenCV_image)
         if(textcolor == None and edgecolor == None):
             return OpenCV_image
-        xp,yp,wp,hp = detect_face_xy(image)
+
+        try:
+            xp,yp,wp,hp = detect_face_xy(image)
+        except:
+            return OpenCV_image
+
         height,width,_ = image.shape
         position = hantei(width,xp,wp)
         comza = 0
@@ -103,7 +108,7 @@ def comset(OpenCV_image,title,tag,profile,category):
         comsiz.append(gousei.comsize(image,text[1],font_path,font_size,limit,0,width))
         text[1],fonts[1] = gousei.comsize(image,text[1],font_path,font_size,limit,1,width)
 
-    print(text)
+    #print(text)
 
 
     if(patern == 'left' or patern == 'right'):
