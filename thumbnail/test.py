@@ -24,6 +24,9 @@ class TestThumbnail(unittest.TestCase):
         DIR = os.path.abspath(os.path.dirname('__file__'))
         self.face = cv2.imread(DIR + '/images/' + 'test.jpg')
 
+    def test_token(self):
+        self.assertNotEqual(jikkou.code, 'アクセストークン')
+
     def test_movie(self):
         self.assertIsNotNone(movie('sistercleaire', jikkou.code))
 

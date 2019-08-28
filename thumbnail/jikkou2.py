@@ -8,7 +8,6 @@ from comset import comset
 from tuushin import apitushin
 from movie import movie
 
-code = 'アクセストークンいれてね'
 limit = 3
 
 def jikkou2():
@@ -52,7 +51,7 @@ def jikkou_tagged(user_ID, scate, better_img = []):
     はじめに識別した後の画像加工
     """
     try:
-        OpenCV_image, title, tag, profile, category = apitushin(user_ID, code)
+        OpenCV_image, title, tag, profile, category = apitushin(user_ID, jikkou.code)
     except:
         print('放送が終了してしまいました。')
         return None
