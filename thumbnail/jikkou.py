@@ -7,7 +7,7 @@ from comset import comset
 from tuushin import apitushin
 from movie import  movie
 
-code = 'Y3Nhc2FrdXJlX2l0YWk0LjcyOGNkYWM0NDU3MWQwYWQ2MTkxMDkxMTliNTA1OGFiMDI2YzQxNzkzZTdhMTgxMGM4NjRhOTA5NGFhZDQ1Mjk6OTFmOTY2MDBhMDI5ODlhMTFlNDA3Mzk2ZjBkZmRkZGM1MDhhNDg2MzQ5M2EzOGU2ZjYxZjRkMDg1NjQ1NWZhOA=='
+code = 'アクセストークンいれてね'
 
 sample = './sample/'
 

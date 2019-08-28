@@ -15,7 +15,7 @@ from get_new_thumbnail_divided import get_new_thumbnail_divided
 CASCADE_DIR = './haarcascade/haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(CASCADE_DIR)
 
-TIMES = 100
+TIMES = 10
 INTERVAL = 2
 
 

@@ -2,14 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e533a65-cbbc-4fe2-8cae-72b29e431740" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/thumbnail/get_new_thumbnail_divided.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thumbnail/jikkou2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/thumbnail/twicas_req.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thumbnail/comset.py" beforeDir="false" afterPath="$PROJECT_DIR$/thumbnail/comset.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thumbnail/jikkou.py" beforeDir="false" afterPath="$PROJECT_DIR$/thumbnail/jikkou.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thumbnail/ueda.py" beforeDir="false" afterPath="$PROJECT_DIR$/thumbnail/ueda.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/jikkou2.py" beforeDir="false" afterPath="$PROJECT_DIR$/thumbnail/jikkou2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1007619449602469889_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1007619449602469889_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1036953698499317760_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1036953698499317760_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1113745824377266177_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1113745824377266177_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1149220542223773696_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1149220542223773696_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1156570910327005188_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/1156570910327005188_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/2177679536_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/2177679536_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/2969275148_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/2969275148_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3021900805_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3021900805_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3089766762_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3089766762_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3094472762_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/3094472762_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/519426224_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/631690898_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/731100257610698752_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/731100257610698752_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/829672984004550656_defau_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/829672984004550656_defau_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/843435209907294208_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/843435209907294208_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/942605198106619904_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/981271442724601856_face_after_last.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/981271442724601856_face_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/output/c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py" beforeDir="false" afterPath="$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +49,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thumbnail/jikkou2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="153">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thumbnail/jikkou.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
               </folding>
@@ -69,12 +108,12 @@
         <option value="$PROJECT_DIR$/thumbnail/make_better_face.py" />
         <option value="$PROJECT_DIR$/thumbnail/test.py" />
         <option value="$PROJECT_DIR$/thumbnail/twicas_req.py" />
-        <option value="$PROJECT_DIR$/thumbnail/jikkou.py" />
         <option value="$PROJECT_DIR$/thumbnail/get_new_thumbnail_divided.py" />
         <option value="$PROJECT_DIR$/thumbnail/comset.py" />
         <option value="$PROJECT_DIR$/thumbnail/ueda.py" />
-        <option value="$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py" />
         <option value="$PROJECT_DIR$/thumbnail/jikkou2.py" />
+        <option value="$PROJECT_DIR$/thumbnail/jikkou.py" />
+        <option value="$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py" />
       </list>
     </option>
   </component>
@@ -99,12 +138,6 @@
               <item name="thumbnail" type="b2602c69:ProjectViewProjectNode" />
               <item name="thumbnail" type="462c0819:PsiDirectoryNode" />
               <item name="thumbnail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thumbnail" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thumbnail" type="462c0819:PsiDirectoryNode" />
-              <item name="thumbnail" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,12 +321,12 @@
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981412" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981412" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3178808" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3178808" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -327,84 +360,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/994077231927431174_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/994077231927431174_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1000280438798102528_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1000280438798102528_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1020638756116705280_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1020638756116705280_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1011059707639840768_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1011059707639840768_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1039196649715773440_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1039196649715773440_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1043654576560193536_defau_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1043654576560193536_defau_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1078230437057638400_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1078230437057638400_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1120649303616176128_defau_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1120649303616176128_defau_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1130862295406354433_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/1130862295406354433_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/2879509688_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/2879509688_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/813726675624046593_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/813726675624046593_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/3139174986_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/2214654834_face_after_last.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/2214654834_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/output/262071815_face_create.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/thumbnail/output/262071815_face_after_last.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -413,15 +368,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thumbnail/output/872055259018838016_face_after_last.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thumbnail/jikkou.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/thumbnail/output/962324461071491080_face_after_last.png">
       <provider selected="true" editor-type-id="images" />
@@ -480,10 +426,98 @@
     <entry file="file://$PROJECT_DIR$/thumbnail/get_new_thumbnail_divided.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/631690898_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/519426224_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/2969275148_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/2969275148_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3089766762_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3089766762_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3094472762_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3094472762_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3021900805_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/3021900805_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/731100257610698752_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/731100257610698752_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/829672984004550656_defau_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/829672984004550656_defau_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/843435209907294208_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/843435209907294208_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/981271442724601856_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/981271442724601856_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1007619449602469889_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1007619449602469889_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1113745824377266177_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1113745824377266177_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1149220542223773696_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1149220542223773696_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1156570910327005188_face_create.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/output/1156570910327005188_face_after_last.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thumbnail/jikkou.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/thumbnail/jikkou2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="153">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
@@ -492,8 +526,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thumbnail/suggest_new_thumbnail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="289">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding>
             <element signature="e#24#39#0" expanded="true" />
           </folding>
