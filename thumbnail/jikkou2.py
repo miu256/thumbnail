@@ -33,17 +33,16 @@ def jikkou2():
 
 
     # 情報量多いサムネ
-    for user_id in good_user_id_list:
-        jikkou_tagged(user_id, 'face')
-
-    # デフォルトサムネ
-    for user_id in default_user_id__list:
-        jikkou_tagged(user_id, 'defau')
+    # for user_id in good_user_id_list:
+    #     jikkou_tagged(user_id, 'face')
+    #
+    # # デフォルトサムネ
+    # for user_id in default_user_id__list:
+    #     jikkou_tagged(user_id, 'defau')
 
     # 失敗したサムネ
     for i in range(error_cnt):
         jikkou_tagged(error_user_id_list[i], 'error', better_images[i])
-
 
 
 def jikkou_tagged(user_ID, scate, better_img = []):
